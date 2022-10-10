@@ -57,7 +57,7 @@
   <div fxFlex *ngIf="leaders">
     <h2>Corporate Leadership</h2>
     <div *ngFor="let leader of leaders">
-      <img src="{{leader.image}}" alt="" width="35px" height="35px">
+      <img src="{{baseURL + leader.image}}" alt="" width="35px" height="35px">
       <p>Name: {{leader.name}}</p>
       <p>Designation: {{leader.designation}}</p>
       <p>Description: {{leader.description}}</p>

@@ -16,7 +16,10 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatSliderModule} from '@angular/material/slider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
@@ -32,6 +35,9 @@ import { ContactComponent } from './contact/contact.component';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LoginComponent } from './login/login.component';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+
+import { baseURL } from './shared/baseUrl';
 
 
 @NgModule({
@@ -64,12 +70,17 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSliderModule,
+    HttpClientModule,
+    HttpModule
 
   ],
   providers: [
     DishService,
-    PromotionService
+    PromotionService,
+    ProcessHTTPMsgService,
+    {provide: 'baseURL', useValue: baseURL}
   ],
   entryComponents:[
     LoginComponent
